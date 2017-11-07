@@ -1,0 +1,68 @@
+@keyframes animation {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes inner-animation {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes inner1-animation {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+#animation-container{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+#animation {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 10px solid white;
+    border-bottom: 10px solid #b3ffe0;
+    border-left: 10px solid #b3ffe0;
+    border-right: 10px solid #b3ffe0;
+    background-color: white;
+    margin: auto;
+    animation: 1s animation infinite;
+    animation-timing-function: linear;
+}
+#inner-animation {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 10px solid white;
+    border-top: 10px solid #99ffd6;
+    border-right: 10px solid #99ffd6;
+    background-color: white;
+    margin: auto;
+    animation: 1.5s inner-animation infinite;
+    animation-timing-function: linear;
+}
+#inner1-animation {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 10px solid white;
+    border-left: 10px solid #80ffcc;
+    border-top: 10px solid #80ffcc;
+    background-color: white;
+    margin: auto;
+    animation: 2s inner1-animation infinite;
+    animation-timing-function: linear;
+}

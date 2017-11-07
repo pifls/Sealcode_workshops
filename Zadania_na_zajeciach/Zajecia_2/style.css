@@ -1,0 +1,75 @@
+@keyframes change-position {
+  0% {
+    left: 0px;
+    top: 0px;
+    background-color: #ccffdd;
+	}
+  12.5% {
+    left: 0px;
+    top: 300px;
+    background-color: #99ffbb;
+	}
+  25% {
+    left: 450px;
+    top: 300px;
+    background-color: #33ff77;
+	}
+  37.5% {
+    left: 450px;
+    top: 0px;
+    background-color: #00e64d;
+	}
+	
+  50% {
+    left: 900px;
+    top: 0px;
+    background-color: #006622;
+	}
+  62.5% {
+    left: 900px;
+    top: 300px;
+    background-color: #00e64d;
+	}
+  75% {
+    left: 450px;
+    top: 300px;
+    background-color: #33ff77;
+	}
+  87.5% {
+    left: 450px;
+    top: 0px;
+    background-color: #99ffbb;
+	}
+  100% {
+    left: 0px;
+    top: 0px;
+    background-color: #ccffdd;
+	}
+}
+
+body
+{
+    background-color: cornflowerblue;
+}
+
+#animation-container
+{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#animation
+{
+    background-color: #ccffdd;
+    border-radius: 50%;
+	height: 200px;
+    width: 200px;
+    position: relative;
+	animation-name: change-position;
+	animation-duration: 5s;
+	animation-delay: 1s;
+    animation-iteration-count: infinite;
+}
