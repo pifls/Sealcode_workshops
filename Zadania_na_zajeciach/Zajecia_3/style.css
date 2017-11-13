@@ -1,0 +1,45 @@
+#div1{
+  background-color: grey;
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+	top: 0px;
+}
+#div2{
+  background-color: orange;
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+	top: 20px;
+}
+#div3{
+  background-color: green;
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  z-index: 3;
+  left: 40px;
+	top: 40px;
+}
+#div4{
+  background-color: blue;
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  z-index: 4;
+  left: 60px;
+	top: 60px;
+}
+#div5{
+  background-color: yellow;
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  z-index: 5;
+  left: 80px;
+	top: 80px;
+}
