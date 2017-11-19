@@ -1,0 +1,15 @@
+body{
+  width: 750px;
+  font-family: Arial,Verdana,sans-serif;
+  color: #665544;
+}
+p{
+  width: 230px;
+  background-color: #efefef;
+  float:left;
+  padding: 5px;
+  margin: 5px;
+}
+#p4{
+  clear: left;
+}
