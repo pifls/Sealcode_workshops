@@ -5,7 +5,7 @@
     
   <meta charset="utf-8">
 
-  <title>To-do app</title>
+  <title>todoist</title>
     
   <meta name="description" content="To-do app for Sealcode Workshops">
   <meta name="author" content="Marek Pikosz">
@@ -13,33 +13,65 @@
 
 
   <link rel="stylesheet" href="style.css">
+    
+  <link href="https://fonts.googleapis.com/css?family=Courgette|Yantramanav|Quattrocento+Sans|Poiret+One" rel="stylesheet">
+    
+    
   <script type="text/javascript" src="scripts.js"></script>
 
 </head>
 
 <body>
     
+    
     <header>
-        <h1>TO-DO APP</h1>
-        <h3>Face the daily tasks with TO-DO APP</h3>
+        <section id="logo">
+            <h1>todoist</h1>
+        </section>
+        
+        <section id="date">9.12.2017</section>
     </header>
     
     <div id="wrapper">
+    <div id="main">
         <section id="manage-tasks">
-            <h1>Manage your tasks</h1>
-            <ul>
-                <li><button>Add task</button></li>
-                <li><button>Delete task</button></li>
-                <li><button>Edit tasks</button></li>
-            </ul>
-            <input type="text" name="task" />
+            <h1 id="adder">add new task</h1>
+            <input id="main-input"type="text" name="task" />
+            <button id="submit"type="button">submit</button>
         </section>
         
         <section id="tasks-list">
-            <h1>Things to do</h1>
+            <ul>
+                <li>
+                    <input class="checker" type="checkbox">
+                    Add JS to the project
+                    <button class="delete" type="button">X</button>
+                </li>
+                <li>
+                    <input class="checker" type="checkbox">
+                    Watch new episode of Mr Robot
+                    <button class="delete" type="button">X</button>
+                </li>
+                <li>
+                    <input class="checker" type="checkbox">
+                    Go running
+                    <button class="delete" type="button">X</button>
+                </li>
+                <li>
+                    <input class="checker" type="checkbox">
+                    Buy tickets for a concert
+                    <button class="delete" type="button">X</button>
+                </li>
+                <li>
+                    <input class="checker" type="checkbox">
+                    Kill yourself
+                    <button class="delete" type="button">X</button>
+                </li>
+            </ul>
         </section>
     </div>
-    
+    </div>
+        
     <footer>
           <small>&copy; Marek Pikosz / Sealcode Workshops</small>
     </footer>
