@@ -7,8 +7,8 @@ document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
 
 
 
-var tab = []
-var k   = 0;
+var taskArr = []
+var k = 0;
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -18,19 +18,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
     addTodoBtn.addEventListener('click', function (event) {
     var inputValue = addTodoInput.value;
     
-    addTask(inputValue);
+        
+      //  location.reload();
+        
+        taskArr.push(inputValue);
+        taskDisp(taskArr);
+        
     });
 });
 
-
-// funkcja tworzy obiekt i dodaje go do tablicy
-function addTask(t){
-    
-    var task = new Object()
-    task.description = t;
-    task.status = false;
-    task.id = k;
-    
-    tab.push(task);
-    k++;
+function taskDisp(t){
+    var ar = [];
+    for(var i=0; i<t.length; i++){
+    ar[i] = "<li> <input class=\"checker\" type=\"checkbox\">" + t[i] + "<button class=\"delete\" type=\"button\">X</button> </li>";
+    }
+    document.getElementById("ul-tasks").innerHTML = ar;
 }
+
