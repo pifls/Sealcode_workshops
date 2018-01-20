@@ -18,12 +18,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     addTodoBtn.addEventListener('click', function (event) {
     var inputValue = addTodoInput.value;
     
-        
-      //  location.reload();
-        
+    if(inputValue == ""){
+        alert("Nie możesz dodać pustego zadania!");
+    }
+    else{
         taskArr.push(inputValue);
         taskDisp(taskArr);
-        
+    }
     });
 });
 
@@ -32,6 +33,6 @@ function taskDisp(t){
     for(var i=0; i<t.length; i++){
     ar[i] = "<li> <input class=\"checker\" type=\"checkbox\">" + t[i] + "<button class=\"delete\" type=\"button\">X</button> </li>";
     }
-    document.getElementById("ul-tasks").innerHTML = ar;
+    document.getElementById("ul-tasks").innerHTML = ar.join("");
 }
 
