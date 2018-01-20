@@ -15,9 +15,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var addTodoInput = document.querySelector('#main-input');
     var addTodoBtn   = document.querySelector('#submit');
     
-    addTodoBtn.addEventListener('click', function (event) {
-    var inputValue = addTodoInput.value;
     
+
+    document.getElementById("submit").addEventListener("click", function(){
+        addTask();
+    });
+    
+    document.querySelector('#main-input').addEventListener('keypress', function (e) {
+    var key = e.which || e.keyCode;
+    if (key === 13) { // 13 is enter
+      addTask();
+    }
+});
+    
+    
+    function addTask() {
+    
+    var inputValue = addTodoInput.value;
+        
+        
     if(inputValue == ""){
         alert("Nie możesz dodać pustego zadania!");
     }
@@ -25,7 +41,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         taskArr.push(inputValue);
         taskDisp(taskArr);
     }
-    });
+    
+    document.getElementById('main-input').value = "";
+        
+    }
 });
 
 function taskDisp(t){
