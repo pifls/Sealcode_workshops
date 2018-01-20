@@ -10,26 +10,24 @@
   <meta name="description" content="To-do app for Sealcode Workshops">
   <meta name="author" content="Marek Pikosz">
   <meta name="keywords" content="todo,todoist,getting things done,productivity,tasks">
+  
 
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
     
   <link href="https://fonts.googleapis.com/css?family=Courgette|Yantramanav|Quattrocento+Sans|Poiret+One" rel="stylesheet">
-    
-    
-  <script type="text/javascript" src="scripts.js"></script>
 
 </head>
 
 <body>
     
-    
     <header>
         <section id="logo">
-            <h1>todoist</h1>
+            <h1 id="logo-hover">todoist</h1>
         </section>
         
-        <section id="date">9.12.2017</section>
+        
+        <section id="date"></section>
     </header>
     
     <div id="wrapper">
@@ -41,7 +39,7 @@
         </section>
         
         <section id="tasks-list">
-            <ul>
+            <ul id="ul-tasks">
                 <li>
                     <input class="checker" type="checkbox">
                     Add JS to the project
@@ -76,5 +74,6 @@
           <small>&copy; Marek Pikosz / Sealcode Workshops</small>
     </footer>
 </body>
+    <script src="scripts.js"></script>
     
 </html>
