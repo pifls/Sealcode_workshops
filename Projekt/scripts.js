@@ -7,7 +7,7 @@ document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
 
 
 
-var taskArr = []
+var taskArr = [];
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
     document.getElementById("submit").addEventListener("click", function(){
         addTask();
+        
     });
     
     document.querySelector('#main-input').addEventListener('keypress', function (e) {
@@ -35,12 +36,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
    
          document.querySelector('body').addEventListener('click', function(event) {
              
-             for(var d=0; d <= 3; d++){
+             for(var d=0; d < taskArr.length; d++){
             if (event.target.className.toLowerCase() === 'delete' + d) {
                   deleteTask(d);
              }
              }
          });
+    
+         document.querySelector('body').addEventListener('click', function(event) {
+             
+            for(var c=0; c < taskArr.length; c++){
+                if (event.target.className.toLowerCase() === 'checker' + c) {
+                  
+                    if(taskArr[c].status == true){
+                      //  alert(taskArr[c].status);
+                        taskArr[c].status = false;
+                    }
+                    else{
+                       // alert(taskArr[c].status);
+                        taskArr[c].status = true;
+                    }
+             }
+             }
+         });
+    
     
     
     
@@ -49,11 +68,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var inputValue = addTodoInput.value;
         
         
-    if(inputValue == ""){
+    if(inputValue == "" || inputValue == " "){
         alert("Nie możesz dodać pustego zadania!");
     }
     else{
-        taskArr.push(inputValue);
+        
+        var task = {desc: inputValue,
+                    status: false};
+        taskArr.push(task);
         taskDisp(taskArr);
     }
     
@@ -64,8 +86,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
     
     function deleteTask(dt){
-        
-        
         
         taskArr.splice(dt, 1);
         
@@ -81,15 +101,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
 function taskDisp(t){
     
      var ar = [];
+    
+    
     if(t.length == 0){
         document.getElementById("ul-tasks").innerHTML = "There are no tasks to do.";
     }
     else{
         for(var i=0; i<t.length; i++){
 
-
-        ar[i] = "<li> <input class=\"checker\" type=\"checkbox\">" + t[i] + "<button class=\"delete" + i + "\"+ type=\"button\"> X</button> </li>";
-            
+        if(t[i].status == true){
+       
+          ar[i] = "<li> <input class=\"checker" + i + "\" + type=\"checkbox\" checked>" + t[i].desc + "<button class=\"delete" + i + "\"+ type=\"button\"> X</button> </li>";
+        }
+        else{
+                      ar[i] = "<li> <input class=\"checker" + i + "\" + type=\"checkbox\">" + t[i].desc + "<button class=\"delete" + i + "\"+ type=\"button\"> X</button> </li>";
+        }
         }
 
         document.getElementById("ul-tasks").innerHTML = ar.join("");
