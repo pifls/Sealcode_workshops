@@ -8,15 +8,18 @@ document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
 
 
 var taskArr = []
-var k = 0;
+
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
     var addTodoInput = document.querySelector('#main-input');
-    var addTodoBtn   = document.querySelector('#submit');
+   // var addTodoBtn   = document.querySelector('#submit');
     
     
-
+    
+    
+   
+    
     document.getElementById("submit").addEventListener("click", function(){
         addTask();
     });
@@ -26,7 +29,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (key === 13) { // 13 is enter
       addTask();
     }
-});
+    });
+    
+    
+    
+     document.querySelector('body').addEventListener('click', function(event) {
+        if (event.target.className.toLowerCase() === 'delete') {
+              deleteTask();
+         }
+     });
+    
     
     
     function addTask() {
@@ -42,16 +54,43 @@ document.addEventListener("DOMContentLoaded", function(event) {
         taskDisp(taskArr);
     }
     
+    // CZYSZCZENIE POLA DO WPISYWANIA ZADANIA
     document.getElementById('main-input').value = "";
-        
+      
     }
+    
+    
+    function deleteTask(){
+        
+        
+        
+        taskArr.splice(0, 1);
+        
+        taskDisp(taskArr);
+    }
+    
+    
+    
 });
 
+
+
 function taskDisp(t){
-    var ar = [];
-    for(var i=0; i<t.length; i++){
-    ar[i] = "<li> <input class=\"checker\" type=\"checkbox\">" + t[i] + "<button class=\"delete\" type=\"button\">X</button> </li>";
+    
+     var ar = [];
+    if(t.length == 0){
+        document.getElementById("ul-tasks").innerHTML = "There are no tasks to do.";
     }
-    document.getElementById("ul-tasks").innerHTML = ar.join("");
+    else{
+        for(var i=0; i<t.length; i++){
+
+
+        ar[i] = "<li> <input class=\"checker\" type=\"checkbox\">" + t[i] + "<button class=\"delete\" type=\"button\"> X</button> </li>";
+        }
+
+        document.getElementById("ul-tasks").innerHTML = ar.join("");
+    }
+    
+    
 }
 
