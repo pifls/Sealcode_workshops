@@ -26,18 +26,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
     document.querySelector('#main-input').addEventListener('keypress', function (e) {
     var key = e.which || e.keyCode;
-    if (key === 13) { // 13 is enter
+    if (key === 13) { // 13 == Enter
       addTask();
     }
     });
     
-    
-    
-     document.querySelector('body').addEventListener('click', function(event) {
-        if (event.target.className.toLowerCase() === 'delete') {
-              deleteTask();
-         }
-     });
+
+   
+         document.querySelector('body').addEventListener('click', function(event) {
+             
+             for(var d=0; d <= 3; d++){
+            if (event.target.className.toLowerCase() === 'delete' + d) {
+                  deleteTask(d);
+             }
+             }
+         });
     
     
     
@@ -60,11 +63,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     
     
-    function deleteTask(){
+    function deleteTask(dt){
         
         
         
-        taskArr.splice(0, 1);
+        taskArr.splice(dt, 1);
         
         taskDisp(taskArr);
     }
@@ -85,7 +88,8 @@ function taskDisp(t){
         for(var i=0; i<t.length; i++){
 
 
-        ar[i] = "<li> <input class=\"checker\" type=\"checkbox\">" + t[i] + "<button class=\"delete\" type=\"button\"> X</button> </li>";
+        ar[i] = "<li> <input class=\"checker\" type=\"checkbox\">" + t[i] + "<button class=\"delete" + i + "\"+ type=\"button\"> X</button> </li>";
+            
         }
 
         document.getElementById("ul-tasks").innerHTML = ar.join("");
