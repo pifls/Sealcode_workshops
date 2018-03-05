@@ -1,1 +1,1 @@
-# My repository for Sealcode workshops
+# Repository for Sealcode workshops - Intermediate group
